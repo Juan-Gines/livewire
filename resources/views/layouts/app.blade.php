@@ -17,8 +17,12 @@
 
     @livewireStyles
 
+    @stack('css') {{-- Colocamos nuestros archivos css --}}
+
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    {{-- Agregamos libreria mensajes de alerta --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -45,6 +49,22 @@
     @stack('modals')
 
     @livewireScripts
+
+    @stack('js') {{-- Colocamos nuestros archivos js --}}
+
+    {{-- Ponemos el script que va a escuchar el evento alert cuando se dispare --}}
+
+    <script>
+        Livewire.on('alert', (title, message) => {
+            console.log(title, message);
+            swal({
+                title: title,
+                text: message,
+                icon: "success",
+                button: "CONTINUAR",
+            });
+        })
+    </script>
 </body>
 
 </html>

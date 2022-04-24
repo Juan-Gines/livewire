@@ -2,7 +2,7 @@
 
 <x-jet-modal :id="$id" :maxWidth="$maxWidth" {{ $attributes }}>
     <div class="px-6 py-4">
-        <div class="text-lg">
+        <div class="text-lg ">
             {{ $title }}
         </div>
 
@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row justify-end px-6 py-4 bg-gray-100 text-right">
+    <div class="flex flex-row justify-end px-6 py-4 bg-gradient-to-b from-blue-100 to-blue-300 text-right">
         {{ $footer }}
     </div>
 </x-jet-modal>
